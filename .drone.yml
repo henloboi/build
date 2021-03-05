@@ -16,3 +16,4 @@ steps:
       - git clone https://github.com/DhruvChhura/build-scripts scripts
       - cd scripts
       - bash build1.sh
+
