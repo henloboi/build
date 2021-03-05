@@ -11,7 +11,7 @@ steps:
        from_secret: chat_id
    commands:
       - apt-get update &&apt-get install wget tmate -y
-      - bash config/build*.sh
+      - bash configs/build*.sh
       - cd /drone/src/
       - git clone https://github.com/DhruvChhura/build-scripts scripts
       - cd scripts
