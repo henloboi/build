@@ -1,0 +1,18 @@
+kind: pipeline
+name: Drone
+
+steps:
+ - name: compile
+   image: starlight2834/ci_docker:latest
+   environment:
+     token:
+       from_secret: token
+     chat_id:
+       from_secret: chat_id
+   commands:
+      - apt-get update &&apt-get install wget tmate -y
+      - bash config/build*.sh
+      - cd /drone/src/
+      - git clone https://github.com/DhruvChhura/build-scripts scripts
+      - cd scripts
+      - bash build1.sh
